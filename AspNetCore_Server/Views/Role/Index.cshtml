@@ -1,0 +1,15 @@
+﻿@model AspNetCore_Server.Models.Applicationrole
+
+@{
+    ViewData["Title"] = "Role manager";
+}
+@section Styles{
+<style>
+</style>
+}
+<h1 class="title">@ViewData["Title"]</h1>
+<form method="post" asp-action="Index" asp-controller="Role">
+    <label asp-for="Name">Title</label>
+    <input asp-for="Name" placeholder="administrator"/>
+    <input asp-action="Index" asp-controller="Role" type="submit" value="Submit"/>
+</form>

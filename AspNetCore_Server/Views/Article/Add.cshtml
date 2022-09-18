@@ -1,0 +1,34 @@
+﻿@model Article;
+
+@{
+    ViewData["Title"] = "Add New Article";
+}
+@section Styles{
+    <link rel="stylesheet" href="~/css/stylesheet1.css"/>
+}
+
+<div class="text-center container row">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <form class="input-group-text row" enctype="multipart/form-data" asp-controller="Article" asp-action="Add" method="post">
+    <div class="row">
+
+        <div class="row col-md-9">
+            <div class="section-group input-group-sm row">
+                <label  asp-for="title" class="col-md-3">Title</label>    
+                <input asp-for="title" class="col-md-9"/>
+            </div>
+            <div class="row col-md-9">
+            <div class="section-group input-group-sm row">
+                <label  asp-for="text" class="col-md-3">Description</label>    
+                <textarea asp-for="text" class="col-md-9"></textarea>
+            </div>
+            <div class="section-group input-group-sm container col-md-3"></div>
+            <div class="section-group input-group-sm row">
+                <img asp-for="content" style="height:100px; width:100px; border:none; border-radius:4%; background-color:white;"/>
+                <input class="row" type="file" asp-for="content" />
+                <label asp-for="content" class="border-primary">additional content</label>    
+            </div>
+    </div>
+    <input class="row" type="submit" value="Send"/>
+    </form>
+</div>

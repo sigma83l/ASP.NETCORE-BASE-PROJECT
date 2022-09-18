@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@{
+    ViewData["Title"] = "Role Table";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Titles</td>
+            <td>Number</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var i in (IQueryable<Applicationrole>)(ViewData["Roles"]))
+        {
+            <tr>
+                <td>
+                    @i.Id
+                </td>
+                <td>
+                    @i.Name
+                </td>
+                <td>
+                    None
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

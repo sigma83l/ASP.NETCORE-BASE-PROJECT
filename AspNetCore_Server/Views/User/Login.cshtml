@@ -1,0 +1,22 @@
+﻿@model LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form class="input-group-text row" enctype="multipart/form-data" asp-controller="User" asp-action="Login" method="post">
+    <div class="row">
+        <div class="section-group input-group-sm container col-md-3"></div>
+        <div class="section-group input-group-sm row">
+            <input class="row" asp-for="Email" />
+            <label asp-for="Email" class="border-primary">Email</label>    
+        </div>
+        <div class="section-group input-group-sm row">
+            <input class="row"asp-for="Password" />
+            <label asp-for="Password" class="border-primary">Password</label>    
+        </div>
+        <h3 style="color:red;"> @Html.ValidationSummary(false)</h3>
+            <input class="btn-primary" type="submit" value="submit"/>
+    </div>
+</form>

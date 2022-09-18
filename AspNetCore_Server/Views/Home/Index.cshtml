@@ -1,0 +1,51 @@
+﻿@inject UserManager<Applicationuser> _usermanager
+@inject ApplicationDbContext _context
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div id="Error">
+        <h1>@Html.ValidationSummary(false)</h1>
+</div>
+
+<div class="container">
+@if(User.Identity.IsAuthenticated){
+    <h1>Your Posts</h1>
+    <br />
+    @foreach(Article q in (IQueryable<Article>)(ViewData["articles"]))
+    {
+            <div class="container row">
+                <header>
+                    <h3><img src=@ViewData["cred"] style="width:10px; height:10px; border-radius:50%;"/><i><b>@q.writer.UserName</b></i> says:</h3>
+                </header>
+                <h1 class="row">@q.title</h1>
+                <div class="row">@q.text</div>
+                <img src=@q.content />
+                <nav><small>@q.likes.ToString()</small><small>@q.dislikes.ToString()</small><small>@q.publish_ime.Date - @q.publish_ime.Hour </small></nav>
+            </div>
+    }
+    <div>
+    <h1>Suggested Posts</h1>
+    <br />
+    @foreach(Article q in (IQueryable<Article>)(ViewBag.reader))
+    {
+            <div class="container row">
+                <header>
+                    <h3><img src=@ViewData["cred"] style="width:10px; height:10px; border-radius:50%;"/><i><b>--</b></i> says:</h3>
+                </header>
+                <h1 class="row">@q.title</h1>
+                <div class="row">@q.text</div>
+                <img src=@q.content />
+                <nav><small>@q.likes.ToString()</small><small>@q.dislikes.ToString()</small><small>@q.publish_ime.Date - @q.publish_ime.Hour </small></nav>
+            </div>
+    }
+</div>
+ }
+</div>
+
+
