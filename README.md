@@ -1,4 +1,4 @@
 # ASP.NET Boilerplate Project
-## base infrastructure of an Asp.NetCore website (Authentication &amp; Authorization &amp; some initial UI views and actions)  
-## some other customized features could be added in the future.
-## Will Be More Equipped Soon...
+- Base Infrastructure Of An ASP.Net Core Web Application (Authentication &amp; Authorization &amp; Some Initial UI Views And Actions)  
+- Some Other Customized Features Could Be Added In The Future.
+- Will Be More Equipped Soon...
