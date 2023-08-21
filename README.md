@@ -3,4 +3,4 @@
 - Some Other Customized Features Could Be Added In The Future.
 - Will Be More Equipped Soon...  
 
-[![Framework](https://skillicons.dev/icons?i=.net)](https://skillicons.dev)
+[![Framework](https://skillicons.dev/icons?i=dotnet)](https://skillicons.dev)
